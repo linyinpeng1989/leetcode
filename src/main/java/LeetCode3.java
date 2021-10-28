@@ -7,7 +7,7 @@
  */
 public class LeetCode3 {
 
-    // 使用 HashMap 记录字符出现位置，65 ms， 39MB
+    // 使用 HashMap 记录字符出现位置，65 ms，39MB
     // public int lengthOfLongestSubstring(String s) {
     //     if (s == null) {
     //         return 0;
@@ -43,7 +43,7 @@ public class LeetCode3 {
     //     return Math.max(maxLength, currEndIndex - currStartIndex);
     // }
 
-    // 将字符转换成对应的 ASCII 码，使用 int[] 记录字符出现位置，
+    // 将字符转换成对应的 ASCII 码，使用 int[] 记录字符出现位置，2ms，38.5MB
     public int lengthOfLongestSubstring(String s) {
         // 记录字符上一次出现的位置。初始元素均为 -1，因为 0 也是 ASCII 码中的一个元素。ASCII 码目前总共定义了 128 个字符。
         int[] last = new int[128];
