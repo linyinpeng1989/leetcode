@@ -1,5 +1,4 @@
 
-
 /**
  * @author Yinpeng.Lin
  * @see <a href="两数相加">https://leetcode-cn.com/problems/add-two-numbers/</a>
@@ -63,23 +62,21 @@ public class LeetCode2 {
      * 使用数组代替HashMap标识进1，省去了HashMap定位时的哈希运算，提升运行效率
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        boolean[] higherAddArray = new boolean[100];
+        boolean[] higherAddArray = new boolean[101];
         int index = 0;
-        ListNode headNode = null;
-        ListNode preNode = null;
+        ListNode headNode;
+        ListNode currNode = headNode = new ListNode(0);
         // 处理较短链表的长度计算
         while (l1 != null || l2 != null) {
             // 当前位对应节点求和
             int currTotal = 0;
             if (l1 != null) {
                 currTotal += l1.val;
-
                 // 后移
                 l1 = l1.next;
             }
             if (l2 != null) {
                 currTotal += l2.val;
-
                 // 后移
                 l2 = l2.next;
             }
@@ -88,30 +85,22 @@ public class LeetCode2 {
             if (index != 0 && higherAddArray[index - 1]) {
                 currTotal++;
             }
-            // 当前位对应节点val值
-            ListNode currNode = new ListNode(currTotal % 10);
 
             // 当前位对应节点是否进1标识
             higherAddArray[index] = currTotal >= 10;
 
-            // 头结点特殊处理
-            if (headNode == null) {
-                headNode = currNode;
-            } else {
-                preNode.next = currNode;
-            }
-
-            // 前序节点赋值
-            preNode = currNode;
+            // 当前位对应节点val值
+            currNode.next = new ListNode(currTotal % 10);
+            currNode = currNode.next;
             index++;
         }
 
         // 处理最后一位是否进1
-        if (preNode != null && higherAddArray[index - 1]) {
-            preNode.next = new ListNode(1);
+        if (higherAddArray[index - 1]) {
+            currNode.next = new ListNode(1);
         }
 
-        return headNode;
+        return headNode.next;
     }
 
     public static void main(String[] args) {
