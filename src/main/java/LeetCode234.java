@@ -1,3 +1,5 @@
+import common.ListNode;
+
 /**
  * @author Yinpeng.Lin
  * @see <a href="回文链表">https://leetcode-cn.com/problems/palindrome-linked-list/</a>
@@ -56,26 +58,6 @@ public class LeetCode234 {
             slowNode = slowNode.next;
         }
         return true;
-    }
-
-    /**
-     * 单链表
-     */
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode() {
-        }
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
     public static void main(String[] args) {

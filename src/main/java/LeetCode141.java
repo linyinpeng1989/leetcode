@@ -1,3 +1,5 @@
+import common.ListNode;
+
 /**
  * @author Yinpeng.Lin
  * @see <a href="环形链表">https://leetcode-cn.com/problems/linked-list-cycle/</a>
@@ -27,23 +29,6 @@ public class LeetCode141 {
             }
         }
         return false;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode() {
-        }
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
 }
