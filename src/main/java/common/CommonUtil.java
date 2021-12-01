@@ -32,11 +32,20 @@ public class CommonUtil {
      * @param array
      */
     public static void printArray(int[] array) {
+        printArray(array, 0, array.length - 1);
+    }
+
+    /**
+     * 打印数组
+     *
+     * @param array
+     */
+    public static void printArray(int[] array, int low, int high) {
         if (array == null || array.length == 0) {
             return;
         }
         StringBuilder sb = new StringBuilder("打印数组：");
-        for (int i = 0; i < array.length; i++) {
+        for (int i = low; i <= high; i++) {
             sb.append(array[i] + ",");
         }
         System.out.println(sb.substring(0, sb.length() - 1));
