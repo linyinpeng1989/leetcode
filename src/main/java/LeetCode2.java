@@ -65,8 +65,9 @@ public class LeetCode2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         boolean[] higherAddArray = new boolean[101];
         int index = 0;
-        ListNode headNode;
-        ListNode currNode = headNode = new ListNode(0);
+        // 新增一个哨兵节点，便于后续处理
+        ListNode headNode = new ListNode(0);
+        ListNode currNode = headNode;
         // 处理较短链表的长度计算
         while (l1 != null || l2 != null) {
             // 当前位对应节点求和

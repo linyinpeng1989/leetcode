@@ -56,7 +56,7 @@ public class LeetCode_Sword_Offer_40 {
             quickSort(arr, leftIndex + 1, high, k);
         }
         // 当 k < pivotIndex + 1 时，需要对左边子数组进行排序
-        else if (leftIndex + 1 >k){
+        else if (leftIndex + 1 > k) {
             quickSort(arr, low, leftIndex - 1, k);
         }
         // 当 k = pivotIndex + 1 时，不需要进行后续子数组排序，直接输出下标 0-k 的元素

@@ -19,11 +19,11 @@ public class CommonUtil {
         } else {
             ListNode temp = head;
             while (temp != null) {
-                sb.append(temp.val);
+                sb.append(temp.val).append(",");
                 temp = temp.next;
             }
         }
-        System.out.println(sb.toString());
+        System.out.println(sb.substring(0, sb.length() - 1));
     }
 
     /**
